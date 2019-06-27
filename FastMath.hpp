@@ -3,7 +3,7 @@
 
 typedef unsigned long long int  ulli;
 
-using namespace std;
+ulli _temp;
 
 inline void fastExp(ulli &_ans, ulli _base, ulli _exp){
 	//	to compute _base ^ _exp	
@@ -36,6 +36,23 @@ inline void fastExpWithMod(ulli &_ans, ulli _base, ulli _exp, ulli _mod){
 	}		
 }                          
 
+inline void GCD(ulli &_ans, ulli _x, ulli _y){
+	// Euclid's 
+        _ans = 0;
+	if(_y > _x){
+		_temp = _x;
+		_x = _y;
+		_y = _temp;
+	}
+	while (_y){
+		_x %= _y;
+		_temp = _x;
+		_x = _y;
+		_y = _temp;
+	}
+
+	_ans = _x;
+} 
 
 #endif
 
